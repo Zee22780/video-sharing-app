@@ -1,4 +1,5 @@
 import './App.css';
+import youtube from './api/youtube';
 import Grid from '@mui/material/Grid'
 
 function App() {
@@ -7,13 +8,13 @@ function App() {
       <Grid style={{justifyContent: "center"}} container spacing={10}>
         <Grid item xs={11}>
           <Grid container spacing={10}>
-            <Grid>
+            <Grid item xs={12}>
               {/* {SearchBar} */}
             </Grid>
-            <Grid>
+            <Grid item xs={8}>
               {/* {VideoDetail} */}
             </Grid>
-            <Grid>
+            <Grid item xs={4}>
               {/* {VideoList} */}
             </Grid>
           </Grid>
