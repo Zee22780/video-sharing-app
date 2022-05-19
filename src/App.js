@@ -1,9 +1,10 @@
 import './App.css';
+import Grid from '@mui/material/Grid'
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <h1>Video Sharing Application</h1>
     </div>
   );
 }
