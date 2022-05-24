@@ -1,9 +1,13 @@
 import './App.css';
+import { useState } from 'react';
 import youtube from './api/youtube';
 import Grid from '@mui/material/Grid'
 import SearchBar from './components/SearchBar';
 
 function App() {
+  const [videos, setVideos] = useState([])
+  const [selectedVideo, setSelectedVideo] = useState({id : {}, snippet: {} })
+
   return (
     <div className="App">
       <Grid style={{justifyContent: "center"}} container spacing={10}>
@@ -25,15 +29,16 @@ function App() {
   );
 
   async function handleSubmit(searchTerm) {
-    const response = await youtube.get("search", {
+    const {data : {items: videos}} = await youtube.get("search", {
       params: {
         part: "snippet",
         maxResults: 5,
-        //key: ,
+        key: process.env.API_KEY,
         q: searchTerm
       }
     })
-    console.log(response)
+    setVideos(videos)
+    setSelectedVideo(videos[0])
   }
 }
 
