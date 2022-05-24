@@ -1,7 +1,7 @@
 import React from "react"
 import { Paper, Typography } from "@mui/material"
 
-const VideoDetail = ({video: { id: { videoId }, snippet: {title, channelTitle, desription } } }) => {
+const VideoDetail = ( {video: { id: { videoId }, snippet: {title, channelTitle, description } } }) => {
   if(!videoId) return <div>Loading...</div>
 
   const videoSrc =`https://www.youtube.com/embed/${videoId}`
@@ -11,7 +11,7 @@ const VideoDetail = ({video: { id: { videoId }, snippet: {title, channelTitle, d
       <Paper elevation={6} style={{ height: "70%" }}>
         <iframe 
           src={videoSrc}
-          frameborder="0" 
+          frameBorder="0" 
           height="100%"
           width="100%"
           title="Video Player"
@@ -25,7 +25,7 @@ const VideoDetail = ({video: { id: { videoId }, snippet: {title, channelTitle, d
           {channelTitle}
         </Typography>
         <Typography variant="subtitle2">
-          {/* {description} */}
+          {description}
         </Typography>
       </Paper>
     </React.Fragment>
