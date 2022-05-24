@@ -1,14 +1,14 @@
 import React from "react"
 import { Paper, Typography } from "@mui/material"
 
-const VideoDetail = ({video: {id: {videoId}, snippet: {title, channelTitle, desription}}}) => {
+const VideoDetail = ({video: { id: { videoId }, snippet: {title, channelTitle, desription } } }) => {
   if(!videoId) return <div>Loading...</div>
 
-  const videoSrc = "https://www.youtube.com/embed/${videoId}"
+  const videoSrc =`https://www.youtube.com/embed/${videoId}`
 
   return ( 
-    <>
-      <Paper elevation={6} style={{ height: "70%"}}>
+    <React.Fragment>
+      <Paper elevation={6} style={{ height: "70%" }}>
         <iframe 
           src={videoSrc}
           frameborder="0" 
@@ -28,7 +28,7 @@ const VideoDetail = ({video: {id: {videoId}, snippet: {title, channelTitle, desr
           {/* {description} */}
         </Typography>
       </Paper>
-    </>
+    </React.Fragment>
   );
 }
 

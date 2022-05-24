@@ -10,7 +10,6 @@ function App() {
   const [selectedVideo, setSelectedVideo] = useState({id : {}, snippet: {} })
 
   return (
-    <div className="App">
       <Grid style={{justifyContent: "center"}} container spacing={10}>
         <Grid item xs={11}>
           <Grid container spacing={10}>
@@ -18,7 +17,7 @@ function App() {
               <SearchBar onSubmit={handleSubmit} />
             </Grid>
             <Grid item xs={8}>
-              <VideoDetail videos={selectedVideo} />
+              <VideoDetail video={selectedVideo} />
             </Grid>
             <Grid item xs={4}>
               {/* {VideoList} */}
@@ -26,16 +25,15 @@ function App() {
           </Grid>
         </Grid>
       </Grid>
-    </div>
   );
 
   async function handleSubmit(searchTerm) {
-    const {data : {items: videos}} = await youtube.get("search", {
+    const {data : { items: videos } } = await youtube.get("search", {
       params: {
         part: "snippet",
         maxResults: 5,
         key: process.env.API_KEY,
-        q: searchTerm
+        q: searchTerm,
       }
     })
     setVideos(videos)

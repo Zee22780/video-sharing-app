@@ -1,12 +1,15 @@
 import { useState } from "react";
-import { Paper, TextField } from "@mui/material";
+import Paper from "@mui/material/Paper";
+import TextField from "@mui/material/TextField";
 
 const SearchBar = ({ onSubmit }) => {
   const [searchTerm, setSearchTerm] = useState("")
+  
   const handleChange = (event) => setSearchTerm(event.target.value)
+  
   const onKeyPress = (event) => {
     if (event.key === "Enter"){
-      onsubmit(searchTerm)
+      onSubmit(searchTerm)
     }
   }
 
