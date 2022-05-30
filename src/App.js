@@ -33,8 +33,7 @@ function App() {
       params: {
         part: "snippet",
         maxResults: 5,
-        key: "AIzaSyDN9Q_bw8_w1w8AC4kj_-d0QPGrx24vk_A",
-        // key: process.env.API_KEY,
+        key: process.env.REACT_APP_API_KEY,
         q: searchTerm,
       }
     })
