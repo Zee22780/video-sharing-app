@@ -8,10 +8,10 @@ import VideoList from './components/VideoList';
 
 function App() {
   const [videos, setVideos] = useState([])
-  const [selectedVideo, setSelectedVideo] = useState({id : {}, snippet: {} })
+  const [selectedVideo, setSelectedVideo] = useState({ id : {}, snippet: {} })
 
   return (
-      <Grid style={{justifyContent: "center"}} container spacing={10}>
+      <Grid style={{ justifyContent: "center" }} container spacing={10}>
         <Grid item xs={11}>
           <Grid container spacing={10}>
             <Grid item xs={12}>
@@ -33,7 +33,8 @@ function App() {
       params: {
         part: "snippet",
         maxResults: 5,
-        key: process.env.API_KEY,
+        key: "AIzaSyDN9Q_bw8_w1w8AC4kj_-d0QPGrx24vk_A",
+        // key: process.env.API_KEY,
         q: searchTerm,
       }
     })
