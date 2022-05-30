@@ -9,6 +9,8 @@ function App() {
   const [selectedVideo, setSelectedVideo] = useState({ id : {}, snippet: {} })
 
   return (
+    <>
+      <h1>Video Sharing App</h1>
       <Grid style={{ justifyContent: "center" }} container spacing={10}>
         <Grid item xs={11}>
           <Grid container spacing={10}>
@@ -24,6 +26,7 @@ function App() {
           </Grid>
         </Grid>
       </Grid>
+  </>
   );
 
   async function handleSubmit(searchTerm) {
