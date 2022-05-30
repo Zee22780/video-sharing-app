@@ -2,9 +2,7 @@ import './App.css';
 import { useState } from 'react';
 import youtube from './api/youtube';
 import Grid from '@mui/material/Grid'
-import SearchBar from './components/SearchBar';
-import VideoDetail from './components/VideoDetail';
-import VideoList from './components/VideoList';
+import { SearchBar, VideoList, VideoDetail } from "./components";
 
 function App() {
   const [videos, setVideos] = useState([])
