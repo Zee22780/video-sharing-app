@@ -4,6 +4,7 @@ import youtube from './api/youtube';
 import Grid from '@mui/material/Grid'
 import SearchBar from './components/SearchBar';
 import VideoDetail from './components/VideoDetail';
+import VideoList from './components/VideoList';
 
 function App() {
   const [videos, setVideos] = useState([])
@@ -20,7 +21,7 @@ function App() {
               <VideoDetail video={selectedVideo} />
             </Grid>
             <Grid item xs={4}>
-              {/* {VideoList} */}
+              <VideoList videos={videos} onVideoSelect={setSelectedVideo} />
             </Grid>
           </Grid>
         </Grid>
