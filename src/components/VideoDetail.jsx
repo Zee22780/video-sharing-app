@@ -1,7 +1,7 @@
 import React from "react"
 import { Paper, Typography } from "@mui/material"
 
-const VideoDetail = ({ video: { id: { videoId }, snippet: {title, channelTitle, description } } }) => {
+const VideoDetail = ({ video: { id: { videoId }, snippet: {title, channelTitle,   description } } }) => {
   if(!videoId) return <div>Loading...</div>
 
   const videoSrc =`https://www.youtube.com/embed/${videoId}`
